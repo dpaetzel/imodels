@@ -1,0 +1,81 @@
+{
+  "nodes": {
+    "kerasTunerSrc": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1636132191,
+        "narHash": "sha256-DOMAz7Yjb3vfKYqjnhJZYhV1hrTgeOzkHc48XHUNrmM=",
+        "owner": "keras-team",
+        "repo": "keras-tuner",
+        "rev": "4146d8e3182df6c4ce928e853a7b3c977ab00034",
+        "type": "github"
+      },
+      "original": {
+        "owner": "keras-team",
+        "ref": "1.1.0",
+        "repo": "keras-tuner",
+        "type": "github"
+      }
+    },
+    "ktLegacySrc": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1681342857,
+        "narHash": "sha256-kuyQzuiCLWd2SNwSv/U5yJR3+hM2pfYX0B5tUzfdwFk=",
+        "owner": "haifeng-jin",
+        "repo": "kt-legacy",
+        "rev": "24ee09049fc73bb6d1933f17bf853f4e0ca948c6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "haifeng-jin",
+        "repo": "kt-legacy",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1728927814,
+        "narHash": "sha256-adkLknNh96Yj2w6R37rsF6IgX14TqybLmGcmAf1AxmE=",
+        "owner": "dpaetzel",
+        "repo": "nixpkgs",
+        "rev": "f395c1507b16fc128edb49e228815741405820ae",
+        "type": "github"
+      },
+      "original": {
+        "owner": "dpaetzel",
+        "ref": "update-clipmenu",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "overlays": {
+      "inputs": {
+        "kerasTunerSrc": "kerasTunerSrc",
+        "ktLegacySrc": "ktLegacySrc"
+      },
+      "locked": {
+        "lastModified": 1730279895,
+        "narHash": "sha256-AVmQ3wNhMsDIoLzXE16On+OZQ5hOd+Zx5NcWsoSRPr4=",
+        "owner": "dpaetzel",
+        "repo": "overlays",
+        "rev": "6af48ca67dcc4abd7ee5592592b358df96fa0497",
+        "type": "github"
+      },
+      "original": {
+        "owner": "dpaetzel",
+        "ref": "master",
+        "repo": "overlays",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "nixpkgs": "nixpkgs",
+        "overlays": "overlays"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

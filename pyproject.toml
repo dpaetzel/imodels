@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "imodels"
+version = "1.4.6"
+description = "Implementations of various interpretable models"
+readme = "readme.md"
+authors = [
+    {name = "Chandan Singh, Keyan Nasseri, Matthew Epland, Yan Shuo Tan, Omer Ronen, Tiffany Tang, Abhineet Agarwal, Theo Saarinen, Bin Yu, and others", email = "chandan_singh@berkeley.edu"}
+]
+requires-python = ">=3.9.0"
+license = { text = "MIT" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "matplotlib",
+    # some lower versions are missing fpgrowth
+    "mlxtend>=0.18.0", # broken in nixpkgs; try without it
+    "numpy<2.0.0",
+    # The `setup.py` by the authors says “tested with pandas 2.2.2 (but
+    # installing this pandas version will try to use newer np versions)” but we
+    # do not run into this issue in the case of Nix-managed Python and can thus
+    # use pandas 2.2.2.
+    "pandas<=2.2.2",
+    # used in c4.5
+    "requests",
+    "scipy",
+    # recently updated this
+    "scikit-learn>=1.2.0",
+    # used in BART
+    "tqdm",
+]
+
+[project.urls]
+homepage = "https://github.com/csinva/imodels"
+
+[project.optional-dependencies]
+dev = [
+    "dvu",
+    "gdown",
+    "jupyter",
+    "jupytext",
+    "matplotlib",
+    "pytest",
+    "pytest-cov",
+    "slurmpy",
+    "tqdm",
+    "pmlb"
+]
+# These are not used by original setup.py it seems.
+# cvxpy = ["cvxpy"]
+# corels = ["corels"]
+# gosdt = ["gosdt-deprecated"]
+# irf = ["irf"]
+
+[tool.setuptools.packages.find]
+exclude = ["tests", "tests.*", "*.test.*"]
